@@ -22,12 +22,12 @@
 		7B7C4EC31FD927BC000E05A5 /* WSYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7C4EC21FD927BC000E05A5 /* WSYRegisterViewController.m */; };
 		7B7C4EC61FD92919000E05A5 /* UIViewController+LOG.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7C4EC51FD92919000E05A5 /* UIViewController+LOG.m */; };
 		7B8924581FD7D0E300AEEB34 /* WSYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8924571FD7D0E300AEEB34 /* WSYSettingViewController.m */; };
-		7B8D74D21FDF6FDA0055FDF9 /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D74C41FDF6FDA0055FDF9 /* BRAddressModel.m */; };
-		7B8D74D31FDF6FDA0055FDF9 /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D74C61FDF6FDA0055FDF9 /* BRAddressPickerView.m */; };
-		7B8D74D41FDF6FDA0055FDF9 /* BRCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B8D74C71FDF6FDA0055FDF9 /* BRCity.plist */; };
-		7B8D74D51FDF6FDA0055FDF9 /* BRBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D74CA1FDF6FDA0055FDF9 /* BRBaseView.m */; };
-		7B8D74D61FDF6FDA0055FDF9 /* BRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D74CE1FDF6FDA0055FDF9 /* BRDatePickerView.m */; };
-		7B8D74D71FDF6FDA0055FDF9 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D74D11FDF6FDA0055FDF9 /* BRStringPickerView.m */; };
+		7B8C3FE01FF285C80061E3F8 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C3FD21FF285C80061E3F8 /* BRStringPickerView.m */; };
+		7B8C3FE11FF285C80061E3F8 /* BRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C3FD61FF285C80061E3F8 /* BRDatePickerView.m */; };
+		7B8C3FE21FF285C80061E3F8 /* BRBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C3FD81FF285C80061E3F8 /* BRBaseView.m */; };
+		7B8C3FE31FF285C80061E3F8 /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C3FDB1FF285C80061E3F8 /* BRAddressModel.m */; };
+		7B8C3FE41FF285C80061E3F8 /* BRCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B8C3FDE1FF285C80061E3F8 /* BRCity.plist */; };
+		7B8C3FE51FF285C80061E3F8 /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C3FDF1FF285C80061E3F8 /* BRAddressPickerView.m */; };
 		7B8D74DA1FDF894E0055FDF9 /* WSYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D74D91FDF894E0055FDF9 /* WSYTextField.m */; };
 		7B8D74DD1FDFB2220055FDF9 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D74DC1FDFB2220055FDF9 /* UITextView+Placeholder.m */; };
 		7BAE41F61FF1DB6700A81944 /* ZJPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE41F51FF1DB6600A81944 /* ZJPageViewController.m */; };
@@ -143,18 +143,18 @@
 		7B7C4EC51FD92919000E05A5 /* UIViewController+LOG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LOG.m"; sourceTree = "<group>"; };
 		7B8924561FD7D0E300AEEB34 /* WSYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSYSettingViewController.h; sourceTree = "<group>"; };
 		7B8924571FD7D0E300AEEB34 /* WSYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSYSettingViewController.m; sourceTree = "<group>"; };
-		7B8D74C31FDF6FDA0055FDF9 /* BRAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressModel.h; sourceTree = "<group>"; };
-		7B8D74C41FDF6FDA0055FDF9 /* BRAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressModel.m; sourceTree = "<group>"; };
-		7B8D74C51FDF6FDA0055FDF9 /* BRAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressPickerView.h; sourceTree = "<group>"; };
-		7B8D74C61FDF6FDA0055FDF9 /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
-		7B8D74C71FDF6FDA0055FDF9 /* BRCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BRCity.plist; sourceTree = "<group>"; };
-		7B8D74C91FDF6FDA0055FDF9 /* BRBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBaseView.h; sourceTree = "<group>"; };
-		7B8D74CA1FDF6FDA0055FDF9 /* BRBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBaseView.m; sourceTree = "<group>"; };
-		7B8D74CB1FDF6FDA0055FDF9 /* BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPickerView.h; sourceTree = "<group>"; };
-		7B8D74CD1FDF6FDA0055FDF9 /* BRDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDatePickerView.h; sourceTree = "<group>"; };
-		7B8D74CE1FDF6FDA0055FDF9 /* BRDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDatePickerView.m; sourceTree = "<group>"; };
-		7B8D74D01FDF6FDA0055FDF9 /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
-		7B8D74D11FDF6FDA0055FDF9 /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
+		7B8C3FD11FF285C80061E3F8 /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
+		7B8C3FD21FF285C80061E3F8 /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
+		7B8C3FD31FF285C80061E3F8 /* BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPickerView.h; sourceTree = "<group>"; };
+		7B8C3FD51FF285C80061E3F8 /* BRDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDatePickerView.h; sourceTree = "<group>"; };
+		7B8C3FD61FF285C80061E3F8 /* BRDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDatePickerView.m; sourceTree = "<group>"; };
+		7B8C3FD81FF285C80061E3F8 /* BRBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBaseView.m; sourceTree = "<group>"; };
+		7B8C3FD91FF285C80061E3F8 /* BRBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBaseView.h; sourceTree = "<group>"; };
+		7B8C3FDB1FF285C80061E3F8 /* BRAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressModel.m; sourceTree = "<group>"; };
+		7B8C3FDC1FF285C80061E3F8 /* BRAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressPickerView.h; sourceTree = "<group>"; };
+		7B8C3FDD1FF285C80061E3F8 /* BRAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressModel.h; sourceTree = "<group>"; };
+		7B8C3FDE1FF285C80061E3F8 /* BRCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BRCity.plist; sourceTree = "<group>"; };
+		7B8C3FDF1FF285C80061E3F8 /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
 		7B8D74D81FDF894E0055FDF9 /* WSYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSYTextField.h; sourceTree = "<group>"; };
 		7B8D74D91FDF894E0055FDF9 /* WSYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSYTextField.m; sourceTree = "<group>"; };
 		7B8D74DB1FDFB2220055FDF9 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
@@ -334,13 +334,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7B715F911FDA65C400E4B639 /* NetworkApi(网络请求) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "NetworkApi(网络请求)";
-			sourceTree = "<group>";
-		};
 		7B715F951FDA6AA600E4B639 /* PersonalCenter(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,56 +426,55 @@
 			path = "Tools(工具)";
 			sourceTree = "<group>";
 		};
-		7B8D74C11FDF6FDA0055FDF9 /* BRPickerView */ = {
+		7B8C3FCF1FF285C80061E3F8 /* BRPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				7B8D74C21FDF6FDA0055FDF9 /* AddressPickerView */,
-				7B8D74C81FDF6FDA0055FDF9 /* Base */,
-				7B8D74CB1FDF6FDA0055FDF9 /* BRPickerView.h */,
-				7B8D74CC1FDF6FDA0055FDF9 /* DatePickerView */,
-				7B8D74CF1FDF6FDA0055FDF9 /* StringPickerView */,
+				7B8C3FD01FF285C80061E3F8 /* StringPickerView */,
+				7B8C3FD31FF285C80061E3F8 /* BRPickerView.h */,
+				7B8C3FD41FF285C80061E3F8 /* DatePickerView */,
+				7B8C3FD71FF285C80061E3F8 /* Base */,
+				7B8C3FDA1FF285C80061E3F8 /* AddressPickerView */,
 			);
-			name = BRPickerView;
-			path = "../../../../../../../../../../Downloads/BRPickerView-master-3/BRPickerView";
+			path = BRPickerView;
 			sourceTree = "<group>";
 		};
-		7B8D74C21FDF6FDA0055FDF9 /* AddressPickerView */ = {
+		7B8C3FD01FF285C80061E3F8 /* StringPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				7B8D74C31FDF6FDA0055FDF9 /* BRAddressModel.h */,
-				7B8D74C41FDF6FDA0055FDF9 /* BRAddressModel.m */,
-				7B8D74C51FDF6FDA0055FDF9 /* BRAddressPickerView.h */,
-				7B8D74C61FDF6FDA0055FDF9 /* BRAddressPickerView.m */,
-				7B8D74C71FDF6FDA0055FDF9 /* BRCity.plist */,
+				7B8C3FD11FF285C80061E3F8 /* BRStringPickerView.h */,
+				7B8C3FD21FF285C80061E3F8 /* BRStringPickerView.m */,
 			);
-			path = AddressPickerView;
+			path = StringPickerView;
 			sourceTree = "<group>";
 		};
-		7B8D74C81FDF6FDA0055FDF9 /* Base */ = {
+		7B8C3FD41FF285C80061E3F8 /* DatePickerView */ = {
 			isa = PBXGroup;
 			children = (
-				7B8D74C91FDF6FDA0055FDF9 /* BRBaseView.h */,
-				7B8D74CA1FDF6FDA0055FDF9 /* BRBaseView.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		7B8D74CC1FDF6FDA0055FDF9 /* DatePickerView */ = {
-			isa = PBXGroup;
-			children = (
-				7B8D74CD1FDF6FDA0055FDF9 /* BRDatePickerView.h */,
-				7B8D74CE1FDF6FDA0055FDF9 /* BRDatePickerView.m */,
+				7B8C3FD51FF285C80061E3F8 /* BRDatePickerView.h */,
+				7B8C3FD61FF285C80061E3F8 /* BRDatePickerView.m */,
 			);
 			path = DatePickerView;
 			sourceTree = "<group>";
 		};
-		7B8D74CF1FDF6FDA0055FDF9 /* StringPickerView */ = {
+		7B8C3FD71FF285C80061E3F8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7B8D74D01FDF6FDA0055FDF9 /* BRStringPickerView.h */,
-				7B8D74D11FDF6FDA0055FDF9 /* BRStringPickerView.m */,
+				7B8C3FD81FF285C80061E3F8 /* BRBaseView.m */,
+				7B8C3FD91FF285C80061E3F8 /* BRBaseView.h */,
 			);
-			path = StringPickerView;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7B8C3FDA1FF285C80061E3F8 /* AddressPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				7B8C3FDC1FF285C80061E3F8 /* BRAddressPickerView.h */,
+				7B8C3FDF1FF285C80061E3F8 /* BRAddressPickerView.m */,
+				7B8C3FDB1FF285C80061E3F8 /* BRAddressModel.m */,
+				7B8C3FDD1FF285C80061E3F8 /* BRAddressModel.h */,
+				7B8C3FDE1FF285C80061E3F8 /* BRCity.plist */,
+			);
+			path = AddressPickerView;
 			sourceTree = "<group>";
 		};
 		7BAE420B1FF21EA600A81944 /* RKNotificationHub */ = {
@@ -597,7 +589,6 @@
 		7BB0850F1FCBE17E007B54CC /* Expand(扩展) */ = {
 			isa = PBXGroup;
 			children = (
-				7B715F911FDA65C400E4B639 /* NetworkApi(网络请求) */,
 				7B7C4EB91FD9230D000E05A5 /* Category(分类) */,
 				7BB0853A1FCC1036007B54CC /* Headers(头文件) */,
 				7BB085381FCC0EA9007B54CC /* Macros(宏) */,
@@ -610,10 +601,10 @@
 		7BB085101FCBE190007B54CC /* Vendors(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				7B8C3FCF1FF285C80061E3F8 /* BRPickerView */,
 				7BAE42161FF267C500A81944 /* SCLAlertView */,
 				7BAE420B1FF21EA600A81944 /* RKNotificationHub */,
 				7BF7EA3A1FF0D8540036420D /* ZJScrollPageView */,
-				7B8D74C11FDF6FDA0055FDF9 /* BRPickerView */,
 				7BF16F8D1FD815F20095E9BD /* SJStaticTableViewComponent */,
 				7BB085311FCC0D72007B54CC /* WRNavigationBar */,
 				7BB085111FCBE1A5007B54CC /* CYLTabBarController */,
@@ -896,7 +887,7 @@
 				7BB084E51FCBDFF3007B54CC /* Assets.xcassets in Resources */,
 				7BB084E31FCBDFF3007B54CC /* Main.storyboard in Resources */,
 				7BBCC4461FDE765700C2E613 /* WSYAddressCell.xib in Resources */,
-				7B8D74D41FDF6FDA0055FDF9 /* BRCity.plist in Resources */,
+				7B8C3FE41FF285C80061E3F8 /* BRCity.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,9 +1000,9 @@
 				7BB085251FCBE1A5007B54CC /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */,
 				7B5CC6EA1FE3A4F000FC1614 /* RKNotificationHub.m in Sources */,
 				7BBCC4371FDE63D100C2E613 /* WSYAddressViewController.m in Sources */,
+				7B8C3FE01FF285C80061E3F8 /* BRStringPickerView.m in Sources */,
 				7BAE422C1FF267C600A81944 /* SCLSwitchView.m in Sources */,
 				7BB085411FCC156B007B54CC /* WSYPersonalCenterViewController.m in Sources */,
-				7B8D74D71FDF6FDA0055FDF9 /* BRStringPickerView.m in Sources */,
 				7BF16FC81FD8164A0095E9BD /* SJStaticTableView.m in Sources */,
 				7BF7EA4C1FF0D8550036420D /* UIView+ZJFrame.m in Sources */,
 				7BF7EA521FF0D8550036420D /* ZJSegmentStyle.m in Sources */,
@@ -1021,6 +1012,7 @@
 				7B7C4EC01FD923A4000E05A5 /* WSYButton.m in Sources */,
 				7B715F9A1FDA6B9600E4B639 /* WSYLoginViewModel.m in Sources */,
 				7BF16FCD1FD8164A0095E9BD /* SJStaticTableviewSectionViewModel.m in Sources */,
+				7B8C3FE31FF285C80061E3F8 /* BRAddressModel.m in Sources */,
 				7B8D74DA1FDF894E0055FDF9 /* WSYTextField.m in Sources */,
 				7BF16FCF1FD8164A0095E9BD /* SJStaticTableViewController.m in Sources */,
 				7BF16FCC1FD8164A0095E9BD /* SJStaticTableViewCell+AccessoryNone.m in Sources */,
@@ -1056,28 +1048,27 @@
 				7BF7EA531FF0D8550036420D /* ZJTitleView.m in Sources */,
 				7B715FA71FDA882A00E4B639 /* WSYInterfacedConst.m in Sources */,
 				7BF16FD11FD8164A0095E9BD /* SJStaticTableviewCellViewModel.m in Sources */,
+				7B8C3FE51FF285C80061E3F8 /* BRAddressPickerView.m in Sources */,
 				7BAE422A1FF267C600A81944 /* SCLAlertViewStyleKit.m in Sources */,
 				7BBCC4661FDE976F00C2E613 /* WSYfullAddressCell.m in Sources */,
-				7B8D74D61FDF6FDA0055FDF9 /* BRDatePickerView.m in Sources */,
 				7BB0852F1FCBE636007B54CC /* WSYNavigationController.m in Sources */,
 				7B5CC6ED1FE3ADE100FC1614 /* WSYMessageViewController.m in Sources */,
 				7B715FA41FDA852000E4B639 /* WSYNetworkTool.m in Sources */,
 				7BAE422D1FF267C600A81944 /* SCLTextView.m in Sources */,
 				7BBCC4341FDE391000C2E613 /* WSYFeedbackViewController.m in Sources */,
-				7B8D74D31FDF6FDA0055FDF9 /* BRAddressPickerView.m in Sources */,
 				7BB085211FCBE1A5007B54CC /* CYLPlusButton.m in Sources */,
 				7BBCC4451FDE765700C2E613 /* WSYAddressCell.m in Sources */,
 				7BB085371FCC0D72007B54CC /* WRNavigationBar.m in Sources */,
 				7BBCC4491FDE857800C2E613 /* WSYAddAddressViewController.m in Sources */,
+				7B8C3FE11FF285C80061E3F8 /* BRDatePickerView.m in Sources */,
 				7BAE42291FF267C600A81944 /* SCLAlertViewResponder.m in Sources */,
 				7BB0852C1FCBE2EA007B54CC /* WSYTabBarControllerConfig.m in Sources */,
 				7BF7EA511FF0D8550036420D /* ZJScrollSegmentView.m in Sources */,
 				7BAE42151FF226A500A81944 /* WSBezier.m in Sources */,
-				7B8D74D51FDF6FDA0055FDF9 /* BRBaseView.m in Sources */,
-				7B8D74D21FDF6FDA0055FDF9 /* BRAddressModel.m in Sources */,
 				7BAE42281FF267C600A81944 /* SCLAlertView.m in Sources */,
 				7BB085221FCBE1A5007B54CC /* CYLTabBar.m in Sources */,
 				7B7C4EC31FD927BC000E05A5 /* WSYRegisterViewController.m in Sources */,
+				7B8C3FE21FF285C80061E3F8 /* BRBaseView.m in Sources */,
 				7B5CC6F61FE3C40C00FC1614 /* WSYHeadView.m in Sources */,
 				7B8924581FD7D0E300AEEB34 /* WSYSettingViewController.m in Sources */,
 				7B7C4EC61FD92919000E05A5 /* UIViewController+LOG.m in Sources */,
