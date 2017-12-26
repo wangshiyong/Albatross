@@ -33,9 +33,10 @@
     
     // 设置自定义导航栏标题颜色
     self.customNavBar.titleLabelColor = [UIColor whiteColor];
-    
+    [self.customNavBar wr_setBottomLineHidden:YES];
     if (self.navigationController.childViewControllers.count != 1) {
-        [self.customNavBar wr_setLeftButtonWithTitle:@"返回" titleColor:[UIColor whiteColor]];
+//        [self.customNavBar wr_setLeftButtonWithTitle:@"返回" titleColor:[UIColor whiteColor]];
+        [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"N_back"]];
     }
 }
 

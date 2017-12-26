@@ -7,10 +7,12 @@
 //
 
 #import "WSYHeadView.h"
+#import "UIButton+Layout.h"
 
 @implementation WSYHeadView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame
+{
     
     self = [super initWithFrame:frame];
     if (self) {
@@ -22,39 +24,72 @@
 #pragma mark - UI
 - (void)setUpUI
 {
-    self.backgroundColor = kThemeColor;
+    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"P_bg"]];
+
+    self.containView = [[UIView alloc]initWithFrame:(CGRect){kScreenWidth - 100, 90, 100, 30}];
+    self.containView.backgroundColor = [UIColor whiteColor];
     
-    self.nameLabel = [[UILabel alloc] init];
-    self.nameLabel.font = [UIFont systemFontOfSize:16.0f];
-    self.nameLabel.textAlignment = NSTextAlignmentLeft;
-    self.nameLabel.textColor = [UIColor whiteColor];
-    self.nameLabel.text = @"思密达";
+    self.integralLab = [[YYLabel alloc]init];
     
-    self.headImage = [[UIImageView alloc] init];
-    self.headImage.image = [UIImage imageNamed:@"image4"];
+    self.headBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.headBtn setTitle:@"思密达" forState:UIControlStateNormal];
+    [self.headBtn setImage:[UIImage imageNamed:@"image4"] forState:UIControlStateNormal];
+    self.headBtn.imageRect = (CGRect){0, 0, 60, 60};
+    self.headBtn.titleRect = (CGRect){74, 0, kScreenWidth - 200, 60};
+    [self.headBtn addTarget:self action:@selector(headBtnBeTouched) forControlEvents:UIControlEventTouchUpInside];
+
+    self.integralBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.integralBtn addTarget:self action:@selector(integralBtnBeTouched) forControlEvents:UIControlEventTouchUpInside];
     
-    [self addSubview:self.headImage];
-    [self addSubview:self.nameLabel];
+    [self addSubview:self.headBtn];
+    [self addSubview:self.containView];
+    [self.containView addSubview:self.integralLab];
+    [self addSubview:self.integralBtn];
+    
+    //设置所需的圆角位置以及大小
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.containView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft cornerRadii:CGSizeMake(15, 15)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.containView.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.containView.layer.mask = maskLayer;
 }
 
 #pragma mark - 布局
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    [self.headImage mas_makeConstraints:^(MASConstraintMaker *make){
+    @weakify(self);
+    [self.headBtn mas_makeConstraints:^(MASConstraintMaker *make){
+        @strongify(self);
         make.left.equalTo(self).offset(16);
         make.top.equalTo(self).offset(75);
-        make.size.mas_equalTo(CGSizeMake(60, 60));
+        make.right.equalTo(self).offset(-110);
     }];
     
-    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make){
-        make.left.equalTo(self).offset(90);
-        make.centerY.equalTo(self.headImage);
-        make.right.equalTo(self).offset(-100);
+    [self.integralLab mas_makeConstraints:^(MASConstraintMaker *make){
+        @strongify(self);
+        make.left.equalTo(self.containView).offset(5);
+        make.centerY.equalTo(self.containView);
+        make.size.mas_equalTo(CGSizeMake(105, 30));
     }];
     
-    
+    [self.integralBtn mas_makeConstraints:^(MASConstraintMaker *make){
+        @strongify(self);
+        make.left.equalTo(self.containView);
+        make.top.equalTo(self).offset(70);
+        make.size.mas_equalTo(CGSizeMake(105, 90));
+    }];
+
+}
+
+- (void)headBtnBeTouched
+{
+    !_myHeadImageViewClickBlock ? : _myHeadImageViewClickBlock();
+}
+
+- (void)integralBtnBeTouched
+{
+    !_myHeadIntegralClickBlock ? : _myHeadIntegralClickBlock();
 }
 
 @end

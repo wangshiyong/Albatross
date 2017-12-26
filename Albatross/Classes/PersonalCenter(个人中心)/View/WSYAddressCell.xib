@@ -53,22 +53,29 @@
                             <constraint firstAttribute="height" constant="28" id="Rfj-O8-m7f"/>
                             <constraint firstAttribute="width" constant="94" id="aRs-Eg-2xF"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title=" 默认地址" image="emoticon">
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title=" 默认地址" image="P_address">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
+                        <state key="selected" image="P_address_1"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpr-zi-qns">
-                        <rect key="frame" x="249" y="79" width="55" height="28"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="删除" image="emoticon">
+                        <rect key="frame" x="262" y="79" width="42" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="9h9-WF-Jp5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="删除" image="P_del">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMe-Q7-MTv">
-                        <rect key="frame" x="184" y="79" width="55" height="28"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="编辑" image="emoticon">
+                        <rect key="frame" x="207" y="79" width="45" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="E0C-eo-xXz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title=" 编辑" image="P_edit">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
@@ -117,6 +124,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="emoticon" width="28" height="28"/>
+        <image name="P_address" width="17" height="17"/>
+        <image name="P_address_1" width="17" height="17"/>
+        <image name="P_del" width="17" height="17"/>
+        <image name="P_edit" width="17" height="17"/>
     </resources>
 </document>

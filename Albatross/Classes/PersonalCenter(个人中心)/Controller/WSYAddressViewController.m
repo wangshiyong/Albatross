@@ -50,8 +50,8 @@
     [self.addBtn mas_makeConstraints:^(MASConstraintMaker *make){
         @strongify(self);
         make.bottom.equalTo(self.view);
-        make.left.equalTo(self.view).offset(40);
-        make.right.equalTo(self.view).offset(-40);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
         make.height.mas_equalTo(50);
     }];
     
@@ -140,12 +140,12 @@
 {
     if (_addBtn == nil) {
         _addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _addBtn.backgroundColor = kThemeColor;
-        _addBtn.titleLabel.font = [UIFont systemFontOfSize:20.0];
+        _addBtn.titleLabel.font = [UIFont systemFontOfSize:18.0];
         [_addBtn setTitle:@"新增地址" forState: UIControlStateNormal];
         [_addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _addBtn.layer.cornerRadius = 25;
-        _addBtn.layer.masksToBounds = YES;
+        [_addBtn setBackgroundImage:[UIImage imageNamed:@"Nav_bg"] forState:UIControlStateNormal];
+//        _addBtn.layer.cornerRadius = 25;
+//        _addBtn.layer.masksToBounds = YES;
     }
     return _addBtn;
 }

@@ -122,7 +122,7 @@
          _logoutLabel.frame = CGRectMake(0, 0, SJScreenWidth, _viewModel.cellHeight);
          _logoutLabel.text = @"退出登录";
          _logoutLabel.textAlignment = NSTextAlignmentCenter;
-         _logoutLabel.textColor = [UIColor blackColor];
+         _logoutLabel.textColor = [UIColor whiteColor];
          _logoutLabel.font = SJLogoutButtonFont;
     }
     return _logoutLabel;

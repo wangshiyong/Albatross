@@ -13,6 +13,7 @@
 #import "WSYLoginViewController.h"
 #import "WSYPersonalInfoViewController.h"
 #import "WSYMessageViewController.h"
+#import "WSYIntegralViewController.h"
 
 // Views
 #import "WSYFlowAttributeCell.h"
@@ -75,11 +76,10 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
  */
 - (void)configureUI
 {
-    self.customNavBar.barBackgroundColor = kThemeColor;
+//    self.customNavBar.barBackgroundColor = kThemeColor;
     [self.customNavBar wr_setBackgroundAlpha:0];
-    [self.customNavBar wr_setBottomLineHidden:YES];
     
-    [self.customNavBar wr_setLeftButtonWithTitle:@"设置" titleColor:[UIColor whiteColor]];
+    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"P_setting"]];
     @weakify(self);
     self.customNavBar.onClickLeftButton = ^{
         @strongify(self);
@@ -87,7 +87,7 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
         [self.navigationController pushViewController:vc animated:YES];
     };
     
-    [self.customNavBar wr_setRightButtonWithImage:[UIImage imageNamed:@"navLeft"]];
+    [self.customNavBar wr_setRightButtonWithImage:[UIImage imageNamed:@"P_info"]];
     hub = [[RKNotificationHub alloc]initWithView:self.customNavBar.rightButton];
     [hub moveCircleByX:-10 Y:15];
     [hub increment];
@@ -141,7 +141,7 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
         cell.type = WSYFlowTypeImage;
         
         NSArray *titles = @[@"交易订单",@"优惠卷",@"积分查询",@"更多"];
-        NSArray *numbers = @[@"image4",@"image4",@"image4",@"image4"];
+        NSArray *numbers = @[@"P_order",@"P_coupon",@"P_integralIcon",@"P_more"];
         
         cell.imageView.image = [UIImage imageNamed:numbers[indexPath.row]];
         cell.titleLab.text = titles[indexPath.row];
@@ -158,17 +158,60 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
     if (kind == UICollectionElementKindSectionHeader) {
         if (indexPath.section == 0) {
             WSYHeadView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:WSYHeadViewID forIndexPath:indexPath];
-            UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]init];
-            [recognizer.rac_gestureSignal subscribeNext:^(id x){
-                //        WSYLoginViewController *vc = [WSYLoginViewController new];
-                //        vc.customNavBar.title = @"登录";
-                //        [self.navigationController pushViewController:vc animated:YES];
+
+            NSMutableAttributedString *text = [NSMutableAttributedString new];
+            UIFont *font = [UIFont systemFontOfSize:12];
+            
+            {
+                UIImage *image = [UIImage imageNamed:@"P_integral"];
+                image = [UIImage imageWithCGImage:image.CGImage scale:2.0 orientation:UIImageOrientationUp];
+                
+                NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+                
+                [text appendAttributedString:attachText];
+                
+                NSString *title = @" 积分:";
+                [text appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:nil]];
+            }
+            NSString *str = @" 999  ";
+            {
+                UIImage *image = [UIImage imageNamed:@"P_integralArrowhead"];
+                image = [UIImage imageWithCGImage:image.CGImage scale:2.0 orientation:UIImageOrientationUp];
+                
+                [text appendAttributedString:[[NSAttributedString alloc] initWithString:str attributes:nil]];
+                
+                NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+                
+                [text appendAttributedString:attachText];
+                
+            }
+            
+//            [text yy_setTextHighlightRange:NSMakeRange(0, str.length) color:kThemeColor backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+//                NSLog(@"《信天嗡用户注册协议》被点击了=====");
+//            }];
+            
+            text.yy_color = kThemeColor;
+            headView.integralLab.attributedText = text;
+            
+            @weakify(self);
+            headView.myHeadImageViewClickBlock = ^{
+                @strongify(self);
+//                WSYLoginViewController *vc = [WSYLoginViewController new];
+//                vc.customNavBar.title = @"登录";
+//                [self.navigationController pushViewController:vc animated:YES];
+                
                 WSYPersonalInfoViewController *vc = [WSYPersonalInfoViewController new];
                 vc.customNavBar.title = @"账号资料";
                 [self.navigationController pushViewController:vc animated:YES];
-            }];
-            recognizer.delegate = self;
-            [headView addGestureRecognizer:recognizer];
+            };
+            
+            headView.myHeadIntegralClickBlock = ^{
+                @strongify(self);
+                WSYIntegralViewController *vc = [[WSYIntegralViewController alloc]init];
+                vc.customNavBar.title = @"当前积分";
+                vc.view.backgroundColor = [UIColor whiteColor];
+                [self.navigationController pushViewController:vc animated:YES];
+            };
             reusableview = headView;
         }
     }
@@ -254,7 +297,7 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
     CGFloat offsetY = scrollView.contentOffset.y ;
     if (offsetY > NAVBAR_COLORCHANGE_POINT )
     {
-        [self.customNavBar wr_setRightButtonWithImage:[UIImage imageNamed:@"back"]];
+//        [self.customNavBar wr_setRightButtonWithImage:[UIImage imageNamed:@"back"]];
         self.customNavBar.title = @"个人信息";
         CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
         [self.customNavBar wr_setBackgroundAlpha:alpha];
@@ -263,7 +306,7 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
     }
     else
     {
-        [self.customNavBar wr_setRightButtonWithImage:[UIImage imageNamed:@"navLeft"]];
+//        [self.customNavBar wr_setRightButtonWithImage:[UIImage imageNamed:@"navLeft"]];
         self.customNavBar.title = @"";
         [self.customNavBar wr_setBackgroundAlpha:0];
         //        [self.customNavBar wr_setTintColor:[UIColor whiteColor]];

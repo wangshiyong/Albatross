@@ -93,7 +93,7 @@
         make.left.equalTo(self.view).offset(20);
         make.right.equalTo(self.view).offset(-20);
         make.top.equalTo(self.phoneTF.mas_bottom).offset(4);
-        make.height.mas_equalTo(2);
+        make.height.mas_equalTo(1);
     }];
     
     [self.view addSubview:self.pwdTF];
@@ -113,7 +113,7 @@
         make.left.equalTo(self.view).offset(20);
         make.right.equalTo(self.view).offset(-20);
         make.top.equalTo(self.pwdTF.mas_bottom).offset(4);
-        make.height.mas_equalTo(2);
+        make.height.mas_equalTo(1);
     }];
     
     [self.view addSubview:self.errorBtn];
@@ -237,7 +237,7 @@
         _phoneTF.font = [UIFont systemFontOfSize:17.0];
         _phoneTF.placeholder = @"请输入手机号";
         UIImageView *phoneImage = [[UIImageView alloc]initWithFrame:(CGRect){0, 0, 30, 30}];
-        phoneImage.image = [UIImage imageNamed:@"L_userName"];
+        phoneImage.image = [UIImage imageNamed:@"P_phone"];
         _phoneTF.leftView = phoneImage;
         _phoneTF.leftViewMode = UITextFieldViewModeAlways;
         _phoneTF.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -253,7 +253,7 @@
         _pwdTF.font = [UIFont systemFontOfSize:17.0];
         _pwdTF.placeholder = @"请输入密码";
         UIImageView *pwdImage = [[UIImageView alloc]initWithFrame:(CGRect){5, 0, 30, 30}];
-        pwdImage.image = [UIImage imageNamed:@"L_pwd"];
+        pwdImage.image = [UIImage imageNamed:@"P_pwd"];
         _pwdTF.leftView = pwdImage;
         _pwdTF.leftViewMode = UITextFieldViewModeAlways;
         _pwdTF.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -314,10 +314,10 @@
     if (_overseasBtn == nil) {
         _overseasBtn = [WSYButton buttonWithType:UIButtonTypeCustom];
         _overseasBtn.titleLabel.font = [UIFont systemFontOfSize:13.0];
-        [_overseasBtn setImage:[UIImage imageNamed:@"emoticon"] forState:UIControlStateNormal];
+        [_overseasBtn setImage:[UIImage imageNamed:@"P_info_1"] forState:UIControlStateNormal];
         [_overseasBtn setTitle:@"境外手机" forState: UIControlStateNormal];
         [_overseasBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        _overseasBtn.imageRect = (CGRect){0, 5, 20, 20};
+        _overseasBtn.imageRect = (CGRect){0, 0, 20, 20};
         _overseasBtn.titleRect = (CGRect){25, 0, 75, 30};
     }
     return _overseasBtn;
@@ -327,10 +327,10 @@
 {
     if (_loginBtn == nil) {
         _loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _loginBtn.backgroundColor = kThemeColor;
         _loginBtn.titleLabel.font = [UIFont systemFontOfSize:20.0];
         [_loginBtn setTitle:@"登     录" forState: UIControlStateNormal];
         [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_loginBtn setBackgroundImage:[UIImage imageNamed:@"Nav_bg"] forState:UIControlStateNormal];
         _loginBtn.layer.cornerRadius = 25;
         _loginBtn.layer.masksToBounds = YES;
     }
@@ -371,8 +371,7 @@
 {
     if (_qqBtn == nil) {
         _qqBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _qqBtn.backgroundColor = kThemeColor;
-        [_qqBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_qqBtn setImage:[UIImage imageNamed:@"P_QQ"] forState:UIControlStateNormal];
     }
     return _qqBtn;
 }
@@ -381,8 +380,7 @@
 {
     if (_weChatBtn == nil) {
         _weChatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _weChatBtn.backgroundColor = kThemeColor;
-        [_weChatBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_weChatBtn setImage:[UIImage imageNamed:@"P_weChat"] forState:UIControlStateNormal];
     }
     return _weChatBtn;
 }

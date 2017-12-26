@@ -47,6 +47,14 @@
         [self configureNav];
     }
     
+    if (@available(iOS 11.0, *)) {
+//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+    }
+
+    
 }
 
 #pragma mark- configure subviews
@@ -59,7 +67,7 @@
 
     // 设置自定义导航栏标题颜色
     self.customNavBar.titleLabelColor = [UIColor whiteColor];
-    [self.customNavBar wr_setLeftButtonWithTitle:@"返回" titleColor:[UIColor whiteColor]];
+    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"N_back"]];
 //    if (self.navigationController.childViewControllers.count != 1) {
 //        [self.customNavBar wr_setLeftButtonWithTitle:@"<返回" titleColor:[UIColor whiteColor]];
 //    }

@@ -16,8 +16,8 @@
 {
     self = [super init];
     if (self) {
-        _sectionHeaderHeight = 10;
-        _sectionFooterHeight = 10;
+        _sectionHeaderHeight = 0;
+        _sectionFooterHeight = 0;
         _leftLabelTextFont = SJLeftTitleTextFont;
         _leftLabelTextColor = SJLeftTitleTextColor;
         _leftImageSize = CGSizeMake(SJImgWidth, SJImgWidth);

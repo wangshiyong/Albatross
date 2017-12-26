@@ -27,7 +27,7 @@
 
 //font
 #define SJLeftTitleTextFont           [UIFont systemFontOfSize:16]
-#define SJLogoutButtonFont            [UIFont systemFontOfSize:16]
+#define SJLogoutButtonFont            [UIFont systemFontOfSize:18]
 #define SJIndicatorLeftTitleTextFont  [UIFont systemFontOfSize:13]
 
 //color

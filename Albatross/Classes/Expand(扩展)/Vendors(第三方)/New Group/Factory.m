@@ -53,7 +53,16 @@
 
 
     SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm1,vm2,vm3,vm4,vm5,vm6]];
-    return @[section0];
+    
+    SJStaticTableviewCellViewModel *vm7 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm7.staticCellType = SJStaticCellTypeSystemLogout;
+    vm7.cellHeight = 50;
+    vm7.cellID = @"logout";
+    
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm7]];
+    section1.sectionHeaderHeight = 50;
+    
+    return @[section0,section1];
 }
 
 

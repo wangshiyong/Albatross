@@ -17,7 +17,6 @@
 
 @interface WSYSettingViewController ()
 
-@property (nonatomic, strong) UIButton *logoutBtn;
 
 @end
 
@@ -26,12 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.customNavBar.title = @"设置";
+    self.tableView = [[SJStaticTableView alloc] initWithFrame:CGRectMake(0, 0, SJScreenWidth, SJScreenHeight)  style:UITableViewStyleGrouped];
     
-    [self.customNavBar wr_setLeftButtonWithTitle:@"返回" titleColor:[UIColor whiteColor]];
-    
-    self.logoutBtn.frame  = (CGRect){35, kScreenHeight - 100, kScreenWidth - 70, 50};
-    [self.view addSubview:self.logoutBtn];
-//    [self.tableView bringSubviewToFront:self.logoutBtn];
+//    if (@available(iOS 11.0, *)) {
+//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        self.tableView.estimatedRowHeight = 0;
+//        self.tableView.estimatedSectionHeaderHeight = 0;
+//        self.tableView.estimatedSectionFooterHeight = 0;
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +62,7 @@
             case SJStaticCellTypeSystemLogout:
             {
                 [cell configureLogoutTableViewCellWithViewModel:viewModel];
+                cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Nav_bg"]];
             }
                 break;
                 
@@ -97,22 +99,5 @@
             break;
     }
 }
-
-#pragma mark ============懒加载============
-
-- (UIButton *)logoutBtn
-{
-    if (_logoutBtn == nil) {
-        _logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _logoutBtn.backgroundColor = kThemeColor;
-        _logoutBtn.titleLabel.font = [UIFont systemFontOfSize:20.0];
-        [_logoutBtn setTitle:@"退出登录" forState: UIControlStateNormal];
-        [_logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _logoutBtn.layer.cornerRadius = 25;
-        _logoutBtn.layer.masksToBounds = YES;
-    }
-    return _logoutBtn;
-}
-
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "WSYFeedbackViewController.h"
+#import "UITextView+Placeholder.h"
 
 @interface WSYFeedbackViewController ()<UIGestureRecognizerDelegate>
 
@@ -43,47 +44,47 @@
 - (void)configureUI
 {
     @weakify(self);
-    [self.view addSubview:self.bgView];
-    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make){
-        @strongify(self);
-        make.top.equalTo(self.view).offset(74);
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(270);
-    }];
+//    [self.view addSubview:self.bgView];
+//    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make){
+//        @strongify(self);
+//        make.top.equalTo(self.view).offset(74);
+//        make.left.right.equalTo(self.view);
+//        make.height.mas_equalTo(270);
+//    }];
+//
+//    [self.bgView addSubview:self.hitLab];
+//    [self.hitLab mas_makeConstraints:^(MASConstraintMaker *make){
+//        @strongify(self);
+//        make.top.equalTo(self.bgView).offset(5);
+//        make.left.equalTo(self.bgView).offset(15);
+//        make.right.equalTo(self.bgView).offset(-15);
+//        make.height.mas_equalTo(30);
+//    }];
     
-    [self.bgView addSubview:self.hitLab];
-    [self.hitLab mas_makeConstraints:^(MASConstraintMaker *make){
-        @strongify(self);
-        make.top.equalTo(self.bgView).offset(5);
-        make.left.equalTo(self.bgView).offset(15);
-        make.right.equalTo(self.bgView).offset(-15);
-        make.height.mas_equalTo(30);
-    }];
-    
-    [self.bgView addSubview:self.textView];
+    [self.view addSubview:self.textView];
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make){
         @strongify(self);
-        make.top.equalTo(self.hitLab.mas_bottom).offset(5);
-        make.left.equalTo(self.bgView).offset(15);
-        make.right.equalTo(self.bgView).offset(-15);
+        make.top.equalTo(self.view).offset(74);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
         make.height.mas_equalTo(180);
     }];
     
-    [self.bgView addSubview:self.numberLab];
-    [self.numberLab mas_makeConstraints:^(MASConstraintMaker *make){
-        @strongify(self);
-        make.top.equalTo(self.textView.mas_bottom).offset(20);
-        make.left.equalTo(self.bgView).offset(15);
-        make.right.equalTo(self.bgView).offset(-15);
-        make.height.mas_equalTo(30);
-    }];
-    
+//    [self.bgView addSubview:self.numberLab];
+//    [self.numberLab mas_makeConstraints:^(MASConstraintMaker *make){
+//        @strongify(self);
+//        make.top.equalTo(self.textView.mas_bottom).offset(20);
+//        make.left.equalTo(self.bgView).offset(15);
+//        make.right.equalTo(self.bgView).offset(-15);
+//        make.height.mas_equalTo(30);
+//    }];
+//
     [self.view addSubview:self.submitsBtn];
     [self.submitsBtn mas_makeConstraints:^(MASConstraintMaker *make){
         @strongify(self);
-        make.top.equalTo(self.bgView.mas_bottom).offset(60);
-        make.left.equalTo(self.bgView).offset(40);
-        make.right.equalTo(self.bgView).offset(-40);
+        make.top.equalTo(self.textView.mas_bottom).offset(60);
+        make.left.equalTo(self.textView).offset(30);
+        make.right.equalTo(self.textView).offset(-30);
         make.height.mas_equalTo(50);
     }];
 }
@@ -94,22 +95,22 @@
 - (void)bindUI
 {
     @weakify(self);
-    [self.textView.rac_textSignal subscribeNext:^(NSString *str){
-        @strongify(self);
-        if (str.length > 0) {
-            self.submitsBtn.enabled = YES;
-            self.submitsBtn.alpha = 1.0;
-            if (str.length >= 100) {
-                self.textView.text = [NSString stringWithFormat:@"%@",[str substringToIndex:100]];
-                self.numberLab.text = @"100/100";
-            } else {
-                self.numberLab.text = [NSString stringWithFormat:@"%lu/100",(unsigned long)str.length];
-            }
-        } else {
-            self.submitsBtn.enabled = NO;
-            self.submitsBtn.alpha = 0.4;
-        }
-    }];
+//    [self.textView.rac_textSignal subscribeNext:^(NSString *str){
+//        @strongify(self);
+//        if (str.length > 0) {
+//            self.submitsBtn.enabled = YES;
+//            self.submitsBtn.alpha = 1.0;
+//            if (str.length >= 100) {
+//                self.textView.text = [NSString stringWithFormat:@"%@",[str substringToIndex:100]];
+//                self.numberLab.text = @"100/100";
+//            } else {
+//                self.numberLab.text = [NSString stringWithFormat:@"%lu/100",(unsigned long)str.length];
+//            }
+//        } else {
+//            self.submitsBtn.enabled = NO;
+//            self.submitsBtn.alpha = 0.4;
+//        }
+//    }];
     
     [[self.submitsBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(id x){
         @strongify(self);
@@ -127,21 +128,21 @@
 }
 
 #pragma mark ============懒加载============
-- (UIView *)bgView
-{
-    if (_bgView == nil) {
-        _bgView = [[UIView alloc]init];
-        _bgView.backgroundColor = [UIColor whiteColor];
-    }
-    return _bgView;
-}
+//- (UIView *)bgView
+//{
+//    if (_bgView == nil) {
+//        _bgView = [[UIView alloc]init];
+//        _bgView.backgroundColor = [UIColor whiteColor];
+//    }
+//    return _bgView;
+//}
 
 - (UIButton *)submitsBtn
 {
     if (_submitsBtn == nil) {
         _submitsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _submitsBtn.titleLabel.font = [UIFont systemFontOfSize:20.0];
-        _submitsBtn.backgroundColor = kThemeColor;
+        _submitsBtn.titleLabel.font = [UIFont systemFontOfSize:18.0];
+        [_submitsBtn setBackgroundImage:[UIImage imageNamed:@"Nav_bg"] forState:UIControlStateNormal];
         [_submitsBtn setTitle:@"提    交" forState: UIControlStateNormal];
         _submitsBtn.layer.cornerRadius = 25;
         _submitsBtn.layer.masksToBounds = YES;
@@ -149,32 +150,34 @@
     return _submitsBtn;
 }
 
-- (UILabel *)hitLab
-{
-    if (_hitLab == nil) {
-        _hitLab = [[UILabel alloc]init];
-        _hitLab.textColor = [UIColor blackColor];
-        _hitLab.text = @"请输入您要对我们说的话";
-    }
-    return _hitLab;
-}
-
-- (UILabel *)numberLab
-{
-    if (_numberLab == nil) {
-        _numberLab = [[UILabel alloc]init];
-        _numberLab.textColor = [UIColor lightGrayColor];
-        _numberLab.text = @"0/100";
-        _numberLab.textAlignment = NSTextAlignmentRight;
-    }
-    return _numberLab;
-}
+//- (UILabel *)hitLab
+//{
+//    if (_hitLab == nil) {
+//        _hitLab = [[UILabel alloc]init];
+//        _hitLab.textColor = [UIColor blackColor];
+//        _hitLab.text = @"请输入您要对我们说的话";
+//    }
+//    return _hitLab;
+//}
+//
+//- (UILabel *)numberLab
+//{
+//    if (_numberLab == nil) {
+//        _numberLab = [[UILabel alloc]init];
+//        _numberLab.textColor = [UIColor lightGrayColor];
+//        _numberLab.text = @"0/100";
+//        _numberLab.textAlignment = NSTextAlignmentRight;
+//    }
+//    return _numberLab;
+//}
 
 - (UITextView *)textView
 {
     if (_textView == nil) {
         _textView = [[UITextView alloc]init];
-        _textView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _textView.backgroundColor = [UIColor whiteColor];
+        _textView.font = [UIFont systemFontOfSize:16];
+        _textView.placeholder = @"请输入您要对我们说的话（100字以内）";
     }
     return _textView;
 }
