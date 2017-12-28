@@ -14,9 +14,13 @@
 /** 屏幕宽度 */
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
+#define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
+#define IMAGE_HEIGHT 160
+#define NAV_HEIGHT 64
+
 /*****************  屏幕适配  ******************/
 #define iphone5 (kScreenHeight == 568)
-
+#define iphoneX (kScreenHeight == 812)
 
 
 /** RGB颜色(16进制) */

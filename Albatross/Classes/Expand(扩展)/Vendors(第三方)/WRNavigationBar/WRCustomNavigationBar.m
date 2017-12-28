@@ -59,7 +59,7 @@
 
 @interface WRCustomNavigationBar ()
 @property (nonatomic, strong) UILabel     *titleLable;
-@property (nonatomic, strong) UIButton    *leftButton;
+//@property (nonatomic, strong) UIButton    *leftButton;
 //@property (nonatomic, strong) UIButton    *rightButton;
 @property (nonatomic, strong) UIView      *bottomLine;
 @property (nonatomic, strong) UIView      *backgroundView;
@@ -92,6 +92,7 @@
     [self addSubview:self.leftButton];
     [self addSubview:self.titleLable];
     [self addSubview:self.rightButton];
+    [self addSubview:self.centerButton];
     [self addSubview:self.bottomLine];
     [self updateFrame];
     self.backgroundColor = [UIColor clearColor];
@@ -112,6 +113,7 @@
     self.backgroundImageView.frame = self.bounds;
     self.leftButton.frame = CGRectMake(margin, top, buttonWidth, buttonHeight);
     self.rightButton.frame = CGRectMake(kWRScreenWidth - buttonWidth - margin, top, buttonWidth, buttonHeight);
+    self.centerButton.frame = CGRectMake(80, top, kWRScreenWidth - 160, buttonHeight);
     self.titleLable.frame = CGRectMake((kWRScreenWidth - titleLabelWidth) / 2, top, titleLabelWidth, titleLabelHeight);
     self.bottomLine.frame = CGRectMake(0, (CGFloat)(self.bounds.size.height-0.5), kWRScreenWidth, 0.5);
 }
@@ -144,6 +146,7 @@
 - (void)wr_setTintColor:(UIColor *)color {
     [self.leftButton setTitleColor:color forState:UIControlStateNormal];
     [self.rightButton setTitleColor:color forState:UIControlStateNormal];
+    [self.centerButton setTitleColor:color forState:UIControlStateNormal];
     [self.titleLable setTextColor:color];
 }
 
@@ -190,6 +193,26 @@
     [self wr_setRightButtonWithNormal:nil highlighted:nil title:title titleColor:titleColor];
 }
 
+- (void)wr_setCenterButtonWithNormal:(UIImage *)normal highlighted:(UIImage *)highlighted title:(NSString *)title titleColor:(UIColor *)titleColor
+{
+    self.centerButton.hidden = NO;
+    [self.centerButton setImage:normal forState:UIControlStateNormal];
+    [self.centerButton setImage:highlighted forState:UIControlStateHighlighted];
+    [self.centerButton setTitle:title forState:UIControlStateNormal];
+    [self.centerButton setTitleColor:titleColor forState:UIControlStateNormal];
+}
+- (void)wr_setCenterButtonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor {
+    [self wr_setCenterButtonWithNormal:image highlighted:image title:title titleColor:titleColor];
+}
+- (void)wr_setCenterButtonWithNormal:(UIImage *)normal highlighted:(UIImage *)highlighted {
+    [self wr_setCenterButtonWithNormal:normal highlighted:highlighted title:nil titleColor:nil];
+}
+- (void)wr_setCenterButtonWithImage:(UIImage *)image {
+    [self wr_setCenterButtonWithNormal:image highlighted:image title:nil titleColor:nil];
+}
+- (void)wr_setCenterButtonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor {
+    [self wr_setCenterButtonWithNormal:nil highlighted:nil title:title titleColor:titleColor];
+}
 #pragma mark - setter
 -(void)setTitle:(NSString *)title {
     _title = title;
@@ -236,6 +259,16 @@
         _rightButton.hidden = YES;
     }
     return _rightButton;
+}
+-(UIButton *)centerButton {
+    if (!_centerButton) {
+        _centerButton = [[UIButton alloc] init];
+//        [_centerButton addTarget:self action:@selector(clickRight) forControlEvents:UIControlEventTouchUpInside];
+        _centerButton.imageView.contentMode = UIViewContentModeCenter;
+        _centerButton.backgroundColor = [UIColor whiteColor];
+        _centerButton.hidden = YES;
+    }
+    return _centerButton;
 }
 -(UILabel *)titleLable {
     if (!_titleLable) {

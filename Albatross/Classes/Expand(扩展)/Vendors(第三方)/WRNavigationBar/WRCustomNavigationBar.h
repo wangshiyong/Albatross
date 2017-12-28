@@ -20,6 +20,8 @@
 @property (nonatomic, strong) UIColor  *barBackgroundColor;
 @property (nonatomic, strong) UIImage  *barBackgroundImage;
 @property (nonatomic, strong) UIButton *rightButton;
+@property (nonatomic, strong) UIButton *leftButton;
+@property (nonatomic, strong) UIButton *centerButton;
 
 + (instancetype)CustomNavigationBar;
 
@@ -40,8 +42,9 @@
 - (void)wr_setRightButtonWithImage:(UIImage *)image;
 - (void)wr_setRightButtonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor;
 
-
-
+- (void)wr_setCenterButtonWithNormal:(UIImage *)normal highlighted:(UIImage *)highlighted;
+- (void)wr_setCenterButtonWithImage:(UIImage *)image;
+- (void)wr_setCenterButtonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor;
 @end
 
 

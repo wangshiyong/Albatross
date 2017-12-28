@@ -11,6 +11,8 @@
 // Controllers
 #import "WSYNavigationController.h"
 #import "WSYPersonalCenterViewController.h"
+#import "WSYHomeViewController.h"
+
 // Models
 
 // Views
@@ -58,7 +60,7 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 }
 
 - (NSArray *)viewControllers {
-    WSYPersonalCenterViewController *firstViewController = [[WSYPersonalCenterViewController alloc] init];
+    WSYHomeViewController *firstViewController = [[WSYHomeViewController alloc] init];
     UIViewController *firstNavigationController = [[WSYNavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     

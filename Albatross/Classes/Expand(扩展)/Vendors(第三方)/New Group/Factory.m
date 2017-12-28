@@ -57,6 +57,7 @@
     SJStaticTableviewCellViewModel *vm7 = [[SJStaticTableviewCellViewModel alloc] init];
     vm7.staticCellType = SJStaticCellTypeSystemLogout;
     vm7.cellHeight = 50;
+    vm7.identifier = 7;
     vm7.cellID = @"logout";
     
     SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm7]];

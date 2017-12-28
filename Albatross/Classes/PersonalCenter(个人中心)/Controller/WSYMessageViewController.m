@@ -66,9 +66,11 @@
 - (UITableView *)tableView
 {
     if (_tableView == nil) {
-        CGRect frame = CGRectMake(0, 64, kScreenWidth, kScreenHeight - 64);
-        _tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
-        //        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        if (iphoneX) {
+            _tableView = [[UITableView alloc] initWithFrame:(CGRect){0, 64, kScreenWidth, kScreenHeight - 64} style:UITableViewStylePlain];
+        } else {
+            _tableView = [[UITableView alloc] initWithFrame:(CGRect){0, 88, kScreenWidth, kScreenHeight - 64} style:UITableViewStylePlain];
+        }
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];

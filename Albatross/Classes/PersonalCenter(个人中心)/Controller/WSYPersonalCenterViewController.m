@@ -23,9 +23,9 @@
 #import "WRNavigationBar.h"
 #import "RKNotificationHub.h"
 
-#define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
-#define IMAGE_HEIGHT 160
-#define NAV_HEIGHT 64
+//#define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
+//#define IMAGE_HEIGHT 160
+//#define NAV_HEIGHT 64
 
 typedef NS_ENUM(NSInteger, WSYPersonalCenterSection) {
     WSYPersonalCenterSectionRecord  = 0,
@@ -37,7 +37,7 @@ static NSString *const WSYFlowAttributeCellID = @"WSYFlowAttributeCell";
 static NSString *const WSYHeadViewID = @"WSYHeadViewID";
 static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableViewID";
 
-@interface WSYPersonalCenterViewController ()<UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIGestureRecognizerDelegate>{
+@interface WSYPersonalCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIGestureRecognizerDelegate>{
     RKNotificationHub *hub;
 }
 
@@ -252,6 +252,9 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
 //head宽高
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (section == 0) {
+        if (iphoneX) {
+            return CGSizeMake(kScreenWidth, 182);
+        }
         return CGSizeMake(kScreenWidth, 160);
     }
     return CGSizeZero;
@@ -295,6 +298,12 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetY = scrollView.contentOffset.y ;
+    if (offsetY < 0) {
+        [self updateNavBarButtonItemsAlphaAnimated:.0f];
+    } else {
+        [self updateNavBarButtonItemsAlphaAnimated:1.0f];
+    }
+    
     if (offsetY > NAVBAR_COLORCHANGE_POINT )
     {
 //        [self.customNavBar wr_setRightButtonWithImage:[UIImage imageNamed:@"back"]];
@@ -312,6 +321,14 @@ static NSString *const WSYCollectionReusableViewID = @"WSYCollectionReusableView
         //        [self.customNavBar wr_setTintColor:[UIColor whiteColor]];
         //        [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
     }
+}
+
+- (void)updateNavBarButtonItemsAlphaAnimated:(CGFloat)alpha
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.customNavBar.leftButton.alpha = alpha;
+        self.customNavBar.rightButton.alpha = alpha;
+    }];
 }
 
 @end

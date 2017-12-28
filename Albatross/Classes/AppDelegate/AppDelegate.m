@@ -103,8 +103,8 @@ UIColor *MainViewColor = nil;
 //    [navigationBarAppearance setBackgroundImage:backgroundImage
 //                                  forBarMetrics:UIBarMetricsDefault];
 //    [navigationBarAppearance setTitleTextAttributes:textAttributes];
-    MainNavBarColor = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    MainViewColor   = [UIColor colorWithRed:126/255.0 green:126/255.0 blue:126/255.0 alpha:1];
+    MainNavBarColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Nav_bg"]];
+    MainViewColor   = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Nav_bg"]];
     
     // 设置导航栏默认的背景颜色
     [WRNavigationBar wr_setDefaultNavBarBarTintColor:MainNavBarColor];
@@ -115,7 +115,8 @@ UIColor *MainViewColor = nil;
     // 统一设置状态栏样式
     [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
     // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
-    [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:NO];
+    [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
+    
 }
 
 

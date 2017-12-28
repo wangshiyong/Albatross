@@ -9,9 +9,10 @@ target 'Albatross' do
    pod 'SMPageControl'
    pod 'EAIntroView'
    pod 'Masonry'
-   pod 'SCLAlertView-Objective-C'
    pod 'MGSwipeTableCell'
    pod 'YYText'
    pod 'FSCalendar'
    pod 'MJRefresh'
+   pod 'TZImagePickerController'
+   pod 'SDWebImage'
 end

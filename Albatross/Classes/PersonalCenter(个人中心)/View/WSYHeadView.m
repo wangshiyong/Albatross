@@ -26,7 +26,11 @@
 {
     self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"P_bg"]];
 
-    self.containView = [[UIView alloc]initWithFrame:(CGRect){kScreenWidth - 100, 90, 100, 30}];
+    if (iphoneX) {
+        self.containView = [[UIView alloc]initWithFrame:(CGRect){kScreenWidth - 100, 112, 100, 30}];
+    } else {
+        self.containView = [[UIView alloc]initWithFrame:(CGRect){kScreenWidth - 100, 90, 100, 30}];
+    }
     self.containView.backgroundColor = [UIColor whiteColor];
     
     self.integralLab = [[YYLabel alloc]init];
@@ -62,7 +66,11 @@
     [self.headBtn mas_makeConstraints:^(MASConstraintMaker *make){
         @strongify(self);
         make.left.equalTo(self).offset(16);
-        make.top.equalTo(self).offset(75);
+        if (iphoneX) {
+            make.top.equalTo(self).offset(97);
+        } else {
+            make.top.equalTo(self).offset(75);
+        }
         make.right.equalTo(self).offset(-110);
     }];
     
